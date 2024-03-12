@@ -27,14 +27,13 @@ public class Ex001 {
 
         double prodReal =  real1 * real2;
 
-        if (real2 == 0){
-            System.out.println("Divisão Impossivel");
-        }
         double divReal = real1 / real2;
 
         System.out.println("Operação A: " + somaInt);
         System.out.println("Operação B: " + somaReal);
         System.out.println("Operação C: " + prodReal);
-        System.out.println("Operação D: " + divReal);
+
+        if (real2 != 0) System.out.println("Operação D: " + divReal);
+        else System.out.println("Operação D: Divisão Impossivel");
     }
 }
