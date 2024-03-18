@@ -1,11 +1,14 @@
 package org.example;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Ex001 {
 //    Entrada com a quantidade de cada pão;
 //    Saída com o número de cada tipo e pão e seu respectivo valor de venda;
 //    Saída com o valor total da compra supondo que um mesmo cliente comprou vários tipos de pães.
+
+    static DecimalFormat df = new DecimalFormat("#.##");
 
     public static void main(String[] args) {
 
@@ -14,17 +17,17 @@ public class Ex001 {
         var custoTotalPaoDoceFarofa = custoTotal(0.50,0.20,0.10);
         var custoTotalPaoShibata = custoTotal(0.50,0.20,0.10);
 
-        System.out.println("Pao integral - Valor De Venda: " + valorVenda(custoTotalPaoIntegral,20,10));
-        System.out.println("Pao integral - Custo Total: " + custoTotalPaoIntegral);
+        System.out.println("Pao integral - Valor De Venda: R$ " + valorVenda(custoTotalPaoIntegral,20,10));
+        System.out.println("Pao integral - Custo Total: R$ " + df.format(custoTotalPaoIntegral));
 
-        System.out.println("Pao Doce Liso - Valor De Venda: " + valorVenda(custoTotalPaoDoceLiso,20,10));
-        System.out.println("Pao Doce Liso - Custo Total: " + custoTotalPaoDoceLiso);
+        System.out.println("Pao Doce Liso - Valor De Venda: R$ " + valorVenda(custoTotalPaoDoceLiso,20,10));
+        System.out.println("Pao Doce Liso - Custo Total: R$ " + df.format(custoTotalPaoDoceLiso));
 
-        System.out.println("Pao Doce Farofa - Valor De Venda: " + valorVenda(custoTotalPaoDoceFarofa,20,10));
-        System.out.println("Pao Doce Farofa - Custo Total: " + custoTotalPaoDoceFarofa);
+        System.out.println("Pao Doce Farofa - Valor De Venda: R$ " + valorVenda(custoTotalPaoDoceFarofa,20,10));
+        System.out.println("Pao Doce Farofa - Custo Total: R$ " + df.format(custoTotalPaoDoceFarofa));
 
-        System.out.println("Pao Shibata - Valor De Venda: " + valorVenda(custoTotalPaoShibata,20,10));
-        System.out.println("Pao Shibata - Custo Total: " + custoTotalPaoShibata);
+        System.out.println("Pao Shibata - Valor De Venda: R$ " + valorVenda(custoTotalPaoShibata,20,10));
+        System.out.println("Pao Shibata - Custo Total: R$ " + df.format(custoTotalPaoShibata));
     }
 
     public static Scanner scanner(){
@@ -34,7 +37,7 @@ public class Ex001 {
         return  (ingredientes + maoDeObra + despesasFixas);
     }
 
-    public static double valorVenda(double custoTotal,int lucroDesejadoPorcent,int margemSegurancaPorcent){
-        return  (custoTotal + ((custoTotal /100 * lucroDesejadoPorcent)) + ((custoTotal / 100 * margemSegurancaPorcent)));
+    public static String valorVenda(double custoTotal, int lucroDesejadoPorcent, int margemSegurancaPorcent){
+        return  df.format((custoTotal + ((custoTotal /100) * lucroDesejadoPorcent) + ((custoTotal / 100) * margemSegurancaPorcent)));
     }
 }
