@@ -11,8 +11,6 @@ public class Ex002 {
 
     public static void main(String[] args) {
 
-
-
         var custoTotalPaoFrances = custoTotal(0.51,0.20,0.10);
         var custoTotalPaoIntegral = custoTotal(0.49,0.20,0.12);
         var custoTotalPaoDoceLiso = custoTotal(0.53,0.20,0.09);
