@@ -33,9 +33,6 @@ public class Ex003 {
             }
             default -> System.out.println("Opção inválida!");
         }
-
-
-
     }
 
     public static Scanner scanner() {
