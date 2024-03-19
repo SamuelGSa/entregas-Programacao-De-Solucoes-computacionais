@@ -5,8 +5,6 @@ import java.util.Scanner;
 
 public class Ex004 {
 
-    static DecimalFormat df = new DecimalFormat("#.##");
-
     public static void main(String[] args) {
         Integer escolha;
         do {
@@ -62,6 +60,11 @@ public class Ex004 {
     }
 
     public static String valorVenda(double custoTotal, int lucroDesejadoPorcent, double margemSegurancaPorcent) {
-        return df.format((custoTotal + ((custoTotal / 100) * lucroDesejadoPorcent) + ((custoTotal / 100) * margemSegurancaPorcent)));
+        return decimalFormat().format((custoTotal + ((custoTotal / 100) * lucroDesejadoPorcent) + ((custoTotal / 100) * margemSegurancaPorcent)));
     }
+
+    public static DecimalFormat decimalFormat() {
+        return new DecimalFormat("#.##");
+    }
+
 }
